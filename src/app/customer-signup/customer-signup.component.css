@@ -1,0 +1,16 @@
+.card-body { background-color : lightseagreen }
+label { color:white}
+
+
+
+.goodEmployee{
+  background-color:green;
+  border: '5px solid yellow';
+  width:  '';
+}
+
+.badEmployee{
+  background-color:red;
+  border: '';
+  width:  '10px';
+}

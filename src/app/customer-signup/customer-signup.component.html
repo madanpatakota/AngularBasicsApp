@@ -1,0 +1,304 @@
+<div style="margin-bottom: 50em">
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-10">
+        <div class="card h-100">
+          <div class="card-header bg-primary text-white">
+            Customer Registration Page
+          </div>
+          <div class="card-body">
+            <form>
+              <div class="mb-3 row">
+                <label for="name" class="col-sm-3 col-form-label">Name</label>
+                <div class="col-sm-9">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    placeholder="Enter your name"
+                  />
+                </div>
+              </div>
+              <div class="mb-3 row">
+                <label for="email" class="col-sm-3 col-form-label">Email</label>
+                <div class="col-sm-9">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    placeholder="Enter your email"
+                  />
+                </div>
+              </div>
+              <div class="mb-3 row">
+                <label for="password" class="col-sm-3 col-form-label"
+                  >Password</label
+                >
+                <div class="col-sm-9">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="password"
+                    placeholder="Enter your Password"
+                  />
+                </div>
+              </div>
+              <div class="mb-3 row">
+                <label for="message" class="col-sm-3 col-form-label"
+                  >Message</label
+                >
+                <div class="col-sm-9">
+                  <textarea
+                    class="form-control"
+                    id="message"
+                    rows="4"
+                    placeholder="Enter your personal details"
+                  ></textarea>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-9 offset-sm-3">
+                  <button type="submit" class="btn btn-primary btn-block">
+                    Submit
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr class="my-4" />
+  <div class="container mt-5">
+    <div class="row">
+      <ul class="list-group list-group-flush">
+        <!--ngStyle-->
+        <li class="list-group-item p-4 border-bottom border-info">
+          <div class="row">
+            <h3 class="d-inline-flex">ngStyle Directive</h3>
+            <span> (We use for change the style based on the condition) </span>
+          </div>
+          <div class="row mt-4">
+            <div class="col-4">
+              <span>Zone Type(Propery Data binding) </span>
+            </div>
+
+            <!-- HTML element with background color
+            <div
+            class="col-3"
+            style="background-color: green;"
+          ></div> -->
+
+            <div
+              class="col-1"
+              [ngStyle]="{
+                'background-color': divColor
+              }"
+            ></div>
+          </div>
+
+          <div class="row mt-4">
+            <div class="col-4">
+              <span>Zone Type(Propery Data binding by condition) </span>
+            </div>
+            <div
+              class="col-3"
+              [ngStyle]="{
+                'background-color': zoneSafeStatus == true ? 'green' : 'red',
+                border: zoneBorderStatus == true ? '5px solid yellow' : '',
+                width: zonemaxWidth == true ? '' : '10px'
+              }"
+            ></div>
+          </div>
+        </li>
+
+        <!--ngClass-->
+        <li class="list-group-item p-4 border-bottom border-info">
+          <div class="row">
+            <h3 class="d-inline-flex">ngClass Directive</h3>
+            <span> (We use for change the class based on the condition) </span>
+          </div>
+          <div class="row mt-4">
+            <div class="col-4">
+              <span>Employee Type Status(Propery Data binding) </span>
+            </div>
+
+            <!-- HTML element with background color -->
+            <!-- <div class="col-3 badEmployee"></div> -->
+
+            <div class="col-1" [ngClass]="'badEmployee'"></div>
+          </div>
+
+          <div class="row mt-4">
+            <div class="col-4">
+              <span
+                >Employee Type Status(Propery Data binding by condition)
+              </span>
+            </div>
+            <div
+              class="col-3"
+              [ngClass]="
+                employeeStatus == true ? 'goodEmployee' : 'badEmployee'
+              "
+            ></div>
+          </div>
+        </li>
+
+        <!-- ngIf -->
+        <li class="list-group-item p-4 border-bottom border-info">
+          <div class="row">
+            <h3 class="d-inline-flex">ngIf Directive</h3>
+            <span> (Display Content based on the Condition) </span>
+          </div>
+          <div class="row mt-4">
+            <div class="col-12">
+              <p *ngIf="customerEligibility" class="text-success">
+                Secret Key : 1!@Yumf!*89
+              </p>
+            </div>
+          </div>
+        </li>
+
+        <!-- local Ref Variables (#) -->
+        <li class="list-group-item p-4 border-bottom border-info">
+          <div class="row">
+            <h3 class="d-inline-flex">Local Ref element</h3>
+            <span>
+              (By default it woul't render based on the condtion its
+              render|executes|trigger)
+            </span>
+          </div>
+          <div class="row mt-4">
+            <div class="col-2">
+              <p class="text-danger" #question>Hey !! How are you doing?</p>
+            </div>
+            <div class="col-1">
+              <button class="btn btn-primary" (click)="btnClick(question)">
+                Click
+              </button>
+            </div>
+            <div class="col-2">
+              <p class="text-success">{{ myAnswer }}</p>
+            </div>
+          </div>
+        </li>
+
+        <!-- ngTemplate -->
+        <li class="list-group-item p-4 border-bottom border-info">
+          <div class="row">
+            <h3 class="d-inline-flex">ngTemplate element</h3>
+            <span>
+              (By default it woul't render based on the condtion its
+              render|executes|trigger)
+            </span>
+          </div>
+          <div class="row mt-4">
+            <div class="col-12">
+              <ng-template>
+                <p class="text-success">Secret Key : 1!@Yumf!*89</p>
+              </ng-template>
+            </div>
+          </div>
+        </li>
+
+        <!-- ngIf and Else -->
+        <li class="list-group-item p-4 border-bottom border-info">
+          <div class="row">
+            <h3 class="d-inline-flex">ngIf else and ngTemplate</h3>
+            <span>
+              (By default it woul't render based on the condtion its
+              render|executes|trigger)
+            </span>
+          </div>
+          <div class="row mt-4">
+            <div class="col-12">
+              <p
+                *ngIf="customerEligibility; else NoEligibleTemplate"
+                class="text-success"
+              >
+                Secret Key : 1!@Yumf!*89
+              </p>
+              <ng-template #NoEligibleTemplate>
+                <p class="text-success">
+                  Secret Key : <span class="font-monospace">Not eligible</span>
+                </p>
+              </ng-template>
+            </div>
+          </div>
+        </li>
+
+        <!-- ngFor (Loop the elements) -->
+        <li class="list-group-item p-4 border-bottom border-info">
+          <div class="row">
+            <h3 class="d-inline-flex">ngFor Directive</h3>
+            <span> (Print the list of the values) </span>
+          </div>
+          <div class="row mt-4">
+            <div class="row">
+              <div class="col-6">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">He Likes the Non Veg Food</li>
+                  <li class="list-group-item">
+                    He dislike in Reception the way they talk in Restaurent
+                  </li>
+                  <li class="list-group-item">He went with his 4 freinds</li>
+                </ul>
+              </div>
+              <div class="col-6">
+                <ul class="list-group list-group-flush">
+                  <li
+                    class="list-group-item"
+                    *ngFor="let exp of customerExperience; let ind = index"
+                  >
+                    {{ ind }} : {{ exp }}
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="row mt-4">
+              <div class="col-6">
+                <ul class="list-group list-group-flush">
+                  <li
+                    class="list-group-item"
+                    *ngFor="let customer of customersList; let ind = index"
+                  >
+                    <span class="text-center"
+                      >{{ ind }} - {{ customer.name }} Lives in
+                      {{ customer.location }} and his Job role is
+                      {{ customer.Job }}
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- ngTemplate -->
+        <li class="list-group-item p-4 border-bottom border-info">
+          <div class="row">
+            <h3 class="d-inline-flex">ngSwitch Directive</h3>
+            <span> (Based on the case we executes the content) </span>
+          </div>
+          <div class="row mt-4">
+            <div class="col-12">
+              <div [ngSwitch]="customerID">
+                <p *ngSwitchCase="0">
+                  John Smith Lives in London and his Job role is Sales Rep
+                </p>
+                <p *ngSwitchCase="1">
+                  Robert Frost Lives in New yark and his Job role is Hotel Chef
+                </p>
+                <p *ngSwitchCase="2">
+                  Peter moore Lives in Colombo and his Job role is Car Driver
+                </p>
+                <p *ngSwitchDefault="">Unable to find any user</p>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
