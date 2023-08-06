@@ -32,15 +32,15 @@ export class CompBComponent {
   */
 
   /*ElementRef
-
       ElementRef is Angular class type which refers to the any element from HTML DOM within the compenents template. 
 
       Byusing the NativeElement from ElementRef
       We can Capture the Element Structure.
-    
-    */
-  /* ViewChild */
+  */
 
+
+
+  /*ViewChild*/
   @ViewChild('CustomerName') vCustomerName: ElementRef<any>;
 
   displayName = '';
@@ -48,6 +48,9 @@ export class CompBComponent {
     console.log(this.vCustomerName);
     this.displayName = this.vCustomerName.nativeElement.value;
   }
+
+
+
 
   /*ContentChild*/
   displayLocation = '';
@@ -57,8 +60,13 @@ export class CompBComponent {
     this.displayLocation = this.vCustomerLocation.nativeElement.value;
   }
 
+
+
   /*differecen between Div and ngContainer*/
   numbers = [1, 2, 3, 4];
+
+
+
 
   /*templateRef*/
   displayCustomerTemplate: TemplateRef<any>;
@@ -68,6 +76,9 @@ export class CompBComponent {
     this.displayCustomerTemplate = customerTemplateRef;
     console.log(this.displayCustomerTemplate);
   }
+
+
+
 
   /*Dynamimc Binding*/
   CustomerPurchaseAmount = '10000$';
