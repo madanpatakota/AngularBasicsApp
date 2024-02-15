@@ -80,7 +80,10 @@ export class CompBComponent {
 
 
 
-  /*Dynamimc Binding*/
+
+
+
+  /*Dynamic template load in ngContainer*/
   CustomerPurchaseAmount = '10000$';
   @ViewChild('CustomerMessageContainer', { read: ViewContainerRef })
   vCustomerContainerRef: ViewContainerRef;
