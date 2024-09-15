@@ -1,17 +1,17 @@
 import { Component, ElementRef } from '@angular/core';
 
 // @Component({
-//   selector: 'app-component-one',
+//   selector: 'app-customer-signup',
 //   template: ``,
 //   styles: [ ``]
 // })
 
 @Component({
-  selector: 'app-comp-a',
-  templateUrl: './comp-a.component.html',
-  styleUrls: ['./comp-a.component.css'],
+  selector: 'app-customer-signup',
+  templateUrl: './customer-signup.component.html',
+  styleUrls: ['./customer-signup.component.css'],
 })
-export class CompAComponent {
+export class CustomerSignUpComponent {
   divColor = 'red';
 
   number = 1;
